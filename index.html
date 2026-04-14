@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alambiques Santaella | Tradición en Ocotlán de Morelos</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="h-full font-body">
+    <div id="app" class="w-full h-full overflow-auto hero-pattern grain" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1a12 100%);">
+      
+      <!-- Navegación Fija -->
+      <nav class="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 fade-up backdrop-blur-md bg-[#1a1a1a]/80 border-b border-white/5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, #b87333, #8b4513);">
+            <span class="text-lg font-bold text-white">AS</span>
+          </div>
+          <span class="font-display text-xl font-bold text-[#fcece0]">Alambiques Santaella</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm tracking-wide text-gray-300">
+          <a href="#inicio" class="hover:text-[#b87333] transition-colors font-medium">Inicio</a> 
+          <a href="#nosotros" class="hover:text-[#b87333] transition-colors font-medium">Identidad</a> 
+          <a href="#equipos" class="hover:text-[#b87333] transition-colors font-medium">Equipos</a> 
+          <a href="#contacto" class="hover:text-[#b87333] transition-colors font-medium">Contacto</a>
+        </div>
+        <button class="md:hidden text-white"> 
+          <i data-lucide="menu"></i> 
+        </button>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="inicio" class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <!-- Imagen de Fondo Principal -->
+        <div class="absolute inset-0 z-0">
+          <img src="img/image.jpg" 
+               alt="Taller de Alambiques" 
+               class="w-full h-full object-cover opacity-40">
+          <div class="bg-overlay"></div>
+        </div>
+
+        <div class="relative z-10 px-6 md:px-12 py-20 md:py-32 max-w-5xl mx-auto text-center">
+          <p class="text-xs tracking-[0.3em] uppercase mb-6 text-[#b87333] fade-up">Ocotlán de Morelos, Oaxaca</p>
+          <h1 class="font-display text-5xl md:text-8xl font-black leading-tight mb-8 text-white fade-up fade-up-d1">
+            Precisión <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#b87333] to-[#fcece0]">Artesanal</span>
+          </h1>
+          <p class="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-gray-400 fade-up fade-up-d2 leading-relaxed">
+            Fabricación de equipos especializados para la industria del mezcal con el respaldo de cuatro generaciones de experiencia heredada.
+          </p>
+          <div class="flex justify-center gap-6 fade-up fade-up-d3">
+            <a href="#contacto" class="px-10 py-4 rounded-full text-sm font-bold transition hover:scale-105 shadow-2xl text-white" style="background: linear-gradient(135deg, #b87333, #8b4513);">
+              Cotizar Proyecto
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Identidad con Tarjetas Cuadradas -->
+      <section id="nosotros" class="px-6 md:px-12 py-20 max-w-6xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Nuestra Identidad</h2>
+          <div class="w-24 h-1 bg-[#b87333] mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Tarjeta 1: Historia -->
+          <div onclick="openModal('modal-mision')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
+            <i data-lucide="history" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
+            <h3 class="font-display text-2xl text-white font-bold mb-3">Historia y Misión</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Cuatro generaciones preservando la autenticidad del proceso mezcalero.</p>
+            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
+              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Valores -->
+          <div onclick="openModal('modal-valores')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
+            <i data-lucide="gem" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
+            <h3 class="font-display text-2xl text-white font-bold mb-3">Nuestros Valores</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Tradición, calidad y honestidad en cada pieza fabricada por manos oaxaqueñas.</p>
+            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
+              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Calidad -->
+          <div onclick="openModal('modal-calidad')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
+            <i data-lucide="verified" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
+            <h3 class="font-display text-2xl text-white font-bold mb-3">Garantía de Calidad</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Equipos funcionales que cumplen con altos estándares de durabilidad.</p>
+            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
+              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Imagen de Fondo Secundaria (Separador) -->
+      <section class="relative py-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img src="img/image3.jpg" 
+               alt="Cobre y Fuego" 
+               class="w-full h-full object-cover opacity-20 grayscale">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-transparent to-[#1a1a1a]"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center fade-up">
+          <h2 class="font-display text-4xl text-[#fcece0] font-bold mb-4">Calidad que Trasciende Generaciones</h2>
+          <p class="text-gray-400 text-lg">Cada equipo es una obra maestra de ingeniería tradicional diseñada para durar.</p>
+        </div>
+      </section>
+
+      <!-- VENTANAS EMERGENTES (MODALES GIGANTES) -->
+      
+      <!-- Modal 1: Historia -->
+      <div id="modal-mision" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
+        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-5xl w-full relative animate-pop overflow-y-auto max-h-[90vh]">
+          <button onclick="closeModal('modal-mision')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
+            <i data-lucide="x" class="w-8 h-8"></i>
+          </button>
+
+          <!-- Imagen Rectangular Horizontal Principal -->
+          <img src="img/image2.jpg" alt="Taller Antiguo" class="w-full h-auto rounded-lg shadow-2xl mb-12">
+          
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6 modal-section p-8">
+              <h3 class="font-display text-5xl text-[#b87333] font-bold">Nuestra Historia</h3>
+              <p class="text-gray-300 leading-relaxed text-lg">
+                Ubicados en **Ocotlán de Morelos, Oaxaca**, somos una empresa familiar con cuatro generaciones dedicadas a la fabricación de equipos para mezcal. Nuestra identidad nace de la experiencia heredada y el compromiso por preservar la autenticidad de los procesos tradicionales.
+              </p>
+              <div class="pt-4">
+                <span class="inline-block px-4 py-2 rounded-full border border-[#b87333] text-[#b87333] text-xs font-bold uppercase tracking-widest">
+                  Desde hace 4 generaciones
+                </span>
+              </div>
+            </div>
+            <div class="space-y-10">
+              <div class="modal-section p-8">
+                <h4 class="font-display text-3xl text-[#fcece0] mb-4 font-bold">Misión</h4>
+                <p class="text-gray-400 leading-relaxed">
+                  Diseñar y fabricar equipos garantizando calidad y autenticidad, contribuyendo a procesos eficientes sin perder la esencia del mezcal.
+                </p>
+              </div>
+              <div class="modal-section p-8">
+                <h4 class="font-display text-3xl text-[#fcece0] mb-4 font-bold">Visión</h4>
+                <p class="text-gray-400 leading-relaxed">
+                  Ser líderes internacionales reconocidos por nuestra innovación y soluciones integrales que preservan los procesos tradicionales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2: Valores -->
+      <div id="modal-valores" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
+        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-4xl w-full relative animate-pop">
+          <button onclick="closeModal('modal-valores')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
+            <i data-lucide="x" class="w-8 h-8"></i>
+          </button>
+          <h3 class="font-display text-5xl text-[#b87333] mb-12 font-bold text-center">Valores</h3>
+          <!-- Imagen Rectangular Horizontal Secundaria -->
+          <img src="img/image5.jpg" alt="Detalle de Cobre" class="w-full h-48 object-cover rounded-lg mb-10 opacity-60">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Tradición</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Conocimiento transmitido de padres a hijos para proteger la cultura mezcalera.
+              </p>
+            </div>
+            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Calidad</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Excelencia técnica en cada soldadura y cada remache de cobre.
+              </p>
+            </div>
+            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Honestidad</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Transparencia comercial y materiales de la más alta pureza certificada.
+              </p>
+            </div>
+            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Innovación</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Mejora continua para optimizar el rendimiento sin sacrificar el sabor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3: Calidad -->
+      <div id="modal-calidad" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
+        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-4xl w-full relative animate-pop">
+          <button onclick="closeModal('modal-calidad')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
+            <i data-lucide="x" class="w-8 h-8"></i>
+          </button>
+          <h3 class="font-display text-5xl text-[#b87333] mb-8 font-bold">Política de Calidad</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="modal-section p-8">
+              <p class="text-2xl text-gray-300 leading-relaxed font-light italic mb-6">
+                "Aseguramos la satisfacción del cliente y la preservación de la autenticidad del proceso mezcalero mediante equipos duraderos."
+              </p>
+              <!-- Imagen Rectangular Horizontal en Apartado -->
+              <img src="img/image4.jpg" alt="Calidad Certificada" class="w-full h-40 object-cover rounded-lg grayscale">
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-white/10">
+              <div class="flex gap-5">
+                <i data-lucide="shield-check" class="text-[#b87333] w-10 h-10 shrink-0"></i>
+                <div>
+                  <h5 class="text-white font-bold mb-1">Grado Alimenticio</h5>
+                  <p class="text-gray-400 text-sm">
+                    Cobre y acero inoxidable bajo normas internacionales de higiene.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-5">
+                <i data-lucide="settings" class="text-[#b87333] w-10 h-10 shrink-0"></i>
+                <div>
+                  <h5 class="text-white font-bold mb-1">Equipos Adaptados</h5>
+                  <p class="text-gray-400 text-sm">
+                    Desarrollo de soluciones técnicas según las necesidades de cada palenque.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="contacto" class="px-6 md:px-12 py-24 border-t border-white/5 bg-[#141414]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
+          <!-- Info de Contacto -->
+          <div class="fade-up">
+            <h2 class="font-display text-5xl font-bold text-white mb-8">Hablemos de tu Proyecto</h2>
+            <p class="text-gray-400 text-lg mb-12 leading-relaxed">
+              Desde piezas individuales hasta palenques completos. Estamos listos para llevar la tradición de Ocotlán a tu destilería.
+            </p>
+            
+            <div class="space-y-8">
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-2xl bg-[#b87333]/10 flex items-center justify-center text-[#b87333] group-hover:bg-[#b87333] group-hover:text-white transition-all">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Llámanos</p>
+                  <p class="text-white font-bold text-xl">+52 951 XXX XXXX</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-2xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all">
+                  <i data-lucide="message-circle"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">WhatsApp</p>
+                  <p class="text-white font-bold text-xl">Enviar Mensaje</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-2xl bg-[#b87333]/10 flex items-center justify-center text-[#b87333] group-hover:bg-[#b87333] group-hover:text-white transition-all">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Ubicación</p>
+                  <p class="text-white font-bold">Ocotlán de Morelos, Oaxaca, México</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <form id="contact-form" class="bg-white/5 p-10 rounded-[40px] border border-white/10 fade-up fade-up-d1">
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <input type="text" placeholder="Nombre" class="contact-input col-span-2 md:col-span-1 p-4 rounded-2xl text-white outline-none" required>
+              <input type="email" placeholder="Email" class="contact-input col-span-2 md:col-span-1 p-4 rounded-2xl text-white outline-none" required>
+            </div>
+            <input type="text" placeholder="Asunto (Ej. Cotización Alambique 300L)" class="contact-input w-full p-4 rounded-2xl text-white outline-none mb-6" required>
+            <textarea placeholder="Cuéntanos sobre tus necesidades..." rows="4" class="contact-input w-full p-4 rounded-2xl text-white outline-none mb-8" required></textarea>
+            <button type="submit" class="w-full py-5 rounded-2xl bg-[#b87333] text-white font-bold hover:bg-[#8b4513] transition-all shadow-xl">
+              Enviar Solicitud
+            </button>
+          </form>
+        </div>
+        <p class="text-center text-xs tracking-widest text-gray-600 uppercase mt-20">© 2024 Alambiques Santaella. Orgullosamente Oaxaqueños.</p>
+      </footer>
+
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

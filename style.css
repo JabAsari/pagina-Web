@@ -1,0 +1,138 @@
+/* Configuración Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-body { font-family: 'DM Sans', sans-serif; }
+
+/* Textura artesanal de fondo */
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(184, 115, 51, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 40%);
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animaciones de Entrada */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-up-d1 { animation-delay: 0.2s; }
+.fade-up-d2 { animation-delay: 0.4s; }
+.fade-up-d3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación de los Modales (Efecto de Ventana) */
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-pop {
+  animation: modalPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Bloqueo de scroll cuando el modal está abierto */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Estilización de las tarjetas de Identidad */
+.group:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(184, 115, 51, 0.15);
+}
+
+/* Capa de superposición para imágenes de fondo */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.9) 0%,
+    rgba(26, 26, 26, 0.6) 50%,
+    rgba(26, 26, 26, 1) 100%
+  );
+}
+
+/* Scrollbar Personalizada para un look Premium */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2b1f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b87333;
+}
+
+/* Ajustes de tipografía para mejorar legibilidad en modales */
+#modal-mision p, #modal-valores p, #modal-calidad p {
+  color: #a8a29e; /* stone-400 */
+}
+
+#modal-mision strong {
+  color: #b87333;
+  font-weight: 600;
+}
+
+/* Glassmorphism para modales */
+.glass-card {
+  background: rgba(26, 26, 26, 0.7) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(184, 115, 51, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Apartados internos de los modales */
+.modal-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para el formulario de contacto */
+.contact-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(184, 115, 51, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+  border-color: #b87333;
+  background: rgba(255, 255, 255, 0.1);
+}
