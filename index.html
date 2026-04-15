@@ -231,61 +231,66 @@
       </div>
 
       <!-- Footer -->
-      <footer id="contacto" class="px-6 md:px-12 py-24 border-t border-white/5 bg-[#141414]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
-          <!-- Info de Contacto -->
-          <div class="fade-up">
-            <h2 class="font-display text-5xl font-bold text-white mb-8">Hablemos de tu Proyecto</h2>
-            <p class="text-gray-400 text-lg mb-12 leading-relaxed">
-              Desde piezas individuales hasta palenques completos. Estamos listos para llevar la tradición de Ocotlán a tu destilería.
-            </p>
+      <footer id="contacto" class="py-12 px-4 border-t border-white/10 bg-[#1a1a1a]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="space-y-8">
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-2xl bg-[#b87333]/10 flex items-center justify-center text-[#b87333] group-hover:bg-[#b87333] group-hover:text-white transition-all">
-                  <i data-lucide="phone"></i>
+            <!-- 📞 Columna 1: Contacto y Redes Sociales -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-display text-white mb-2">Hablemos de tu Proyecto</h3>
+                <p class="text-stone-400 text-sm mb-4">Desde piezas individuales hasta palenques completos. Estamos listos para llevar la tradición de Ocotlán a tu destilería.</p>
+                
+                <div class="space-y-2">
+                    <a href="tel:+529512432108" class="flex items-center gap-2 text-white hover:text-[#b87333] transition">
+                        <i data-lucide="phone" class="w-4 h-4"></i> +52 951 243 2108
+                    </a>
+                    <a href="https://wa.me/529512432108" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white hover:text-green-500 transition">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                    </a>
                 </div>
-                <div>
-                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Llámanos</p>
-                  <p class="text-white font-bold text-xl">+52 951 XXX XXXX</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-2xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all">
-                  <i data-lucide="message-circle"></i>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">WhatsApp</p>
-                  <p class="text-white font-bold text-xl">Enviar Mensaje</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-2xl bg-[#b87333]/10 flex items-center justify-center text-[#b87333] group-hover:bg-[#b87333] group-hover:text-white transition-all">
-                  <i data-lucide="map-pin"></i>
-                </div>
-                <div>
-                  <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Ubicación</p>
-                  <p class="text-white font-bold">Ocotlán de Morelos, Oaxaca, México</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Formulario -->
-          <form id="contact-form" class="bg-white/5 p-10 rounded-[40px] border border-white/10 fade-up fade-up-d1">
-            <div class="grid grid-cols-2 gap-6 mb-6">
-              <input type="text" placeholder="Nombre" class="contact-input col-span-2 md:col-span-1 p-4 rounded-2xl text-white outline-none" required>
-              <input type="email" placeholder="Email" class="contact-input col-span-2 md:col-span-1 p-4 rounded-2xl text-white outline-none" required>
+                <!-- 🔗 Redes Sociales Funcionales -->
+                <div class="flex gap-3 pt-2">
+                    <a href="https://facebook.com/p/Alambiques-y-Mezcal-Santaella-100039505914791/?locale=es_LA" target="_blank" rel="noopener noreferrer" 
+                      class="p-2 rounded-full border border-white/20 text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://instagram.com/TU_USUARIO_OFICIAL" target="_blank" rel="noopener noreferrer" 
+                      class="p-2 rounded-full border border-white/20 text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent transition-all">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
-            <input type="text" placeholder="Asunto (Ej. Cotización Alambique 300L)" class="contact-input w-full p-4 rounded-2xl text-white outline-none mb-6" required>
-            <textarea placeholder="Cuéntanos sobre tus necesidades..." rows="4" class="contact-input w-full p-4 rounded-2xl text-white outline-none mb-8" required></textarea>
-            <button type="submit" class="w-full py-5 rounded-2xl bg-[#b87333] text-white font-bold hover:bg-[#8b4513] transition-all shadow-xl">
-              Enviar Solicitud
-            </button>
-          </form>
+
+            <!-- 🗺️ Columna 2: Google Maps -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-[#b87333]"></i> Ubicación
+                </h3>
+                <div class="rounded-xl overflow-hidden border border-white/10 h-48 md:h-64">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8841.49936843237!2d-96.67992768130198!3d16.773171212941552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c740baa4583d9b%3A0x2cc458af0039f3ed!2sNovauniversitas!5e0!3m2!1ses-419!2smx!4v1776219099509!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p class="text-stone-400 text-xs">Ocotlán de Morelos, Oaxaca, México</p>
+            </div>
+
+            <!-- 📝 Columna 3: Formulario (Mantiene ID para tu script.js) -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-white">Envíanos un mensaje</h3>
+                <form id="contact-form" class="space-y-3">
+                    <input type="text" name="name" placeholder="Tu nombre" class="contact-input w-full p-3 rounded-lg text-white text-sm" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" class="contact-input w-full p-3 rounded-lg text-white text-sm" required>
+                    <textarea name="message" placeholder="Cuéntanos sobre tu proyecto..." rows="3" class="contact-input w-full p-3 rounded-lg text-white text-sm" required></textarea>
+                    <button type="submit" class="w-full bg-[#b87333] text-black font-bold py-3 rounded-lg hover:opacity-90 transition text-sm">
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
         </div>
-        <p class="text-center text-xs tracking-widest text-gray-600 uppercase mt-20">© 2024 Alambiques Santaella. Orgullosamente Oaxaqueños.</p>
-      </footer>
+
+        <!-- Copyright -->
+        <div class="mt-12 pt-6 border-t border-white/10 text-center text-stone-500 text-xs">
+            <p>© 2026 Alambiques Santaella. Orgullosamente Oaxaqueños.</p>
+        </div>
+    </footer>
 
       <script src="script.js"></script>
     </div>
