@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" class="h-full">
+<html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="h-full font-body">
-    <div id="app" class="w-full h-full overflow-auto hero-pattern grain" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1a12 100%);">
+  <body class="font-body bg-[#1a1a1a]">
+    <div id="app" class="min-h-screen hero-pattern grain" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1a12 100%);">
       
       <!-- Navegación Fija -->
       <nav class="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 fade-up backdrop-blur-md bg-[#1a1a1a]/80 border-b border-white/5">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, #b87333, #8b4513);">
-            <span class="text-lg font-bold text-white">AS</span>
+          <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, #b87333, #8b4513);">
+            <img src="img/IMG_6101.jpg" alt="Logo" class="w-full h-full object-cover">
           </div>
           <span class="font-display text-xl font-bold text-[#fcece0]">Alambiques Santaella</span>
         </div>
@@ -32,7 +32,7 @@
       </nav>
 
       <!-- Hero Section -->
-      <section id="inicio" class="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
         <!-- Imagen de Fondo Principal -->
         <div class="absolute inset-0 z-0">
           <img src="img/image.jpg" 
