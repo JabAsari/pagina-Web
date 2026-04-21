@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alambiques Santaella | Tradición en Ocotlán de Morelos</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <!-- Iconos Lucide -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="font-body bg-[#1a1a1a]">
     <div id="app" class="min-h-screen hero-pattern grain" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1a12 100%);">
       
       <!-- Navegación Fija -->
-      <nav class="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 fade-up backdrop-blur-md bg-[#1a1a1a]/80 border-b border-white/5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, #b87333, #8b4513);">
-            <img src="img/IMG_6101.jpg" alt="Logo" class="w-full h-full object-cover">
+      <nav class="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-3 md:py-4 backdrop-blur-md bg-[#1a1a1a]/80 border-b border-white/5 fade-in-start">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 rounded-full overflow-hidden flex items-center justify-center shadow-2xl border-2 border-[#b87333]/50" style="background: linear-gradient(135deg, #b87333, #8b4513);">
+            <img src="img/IMG_6101.jpg" onerror="this.src='https://images.unsplash.com/photo-1574621100236-d26b52e6ea9b?auto=format&fit=crop&q=80&w=200';" alt="Logo" class="w-full h-full object-cover">
           </div>
-          <span class="font-display text-xl font-bold text-[#fcece0]">Alambiques Santaella</span>
+          <div class="flex flex-col">
+            <span class="font-display text-xl md:text-2xl font-bold text-[#fcece0] leading-tight">Alambiques</span>
+            <span class="font-display text-xl md:text-2xl font-bold text-[#b87333] leading-tight">Santaella</span>
+          </div>
         </div>
         <div class="hidden md:flex gap-8 text-sm tracking-wide text-gray-300">
           <a href="#inicio" class="hover:text-[#b87333] transition-colors font-medium">Inicio</a> 
-          <a href="#nosotros" class="hover:text-[#b87333] transition-colors font-medium">Identidad</a> 
+          <a href="#historia" class="hover:text-[#b87333] transition-colors font-medium">Historia</a> 
+          <a href="#valores" class="hover:text-[#b87333] transition-colors font-medium">Valores</a> 
           <a href="#equipos" class="hover:text-[#b87333] transition-colors font-medium">Equipos</a> 
           <a href="#contacto" class="hover:text-[#b87333] transition-colors font-medium">Contacto</a>
         </div>
@@ -35,21 +43,19 @@
       <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
         <!-- Imagen de Fondo Principal -->
         <div class="absolute inset-0 z-0">
-          <img src="img/image.jpg" 
-               alt="Taller de Alambiques" 
-               class="w-full h-full object-cover opacity-40">
+          <img src="img/image.jpg" onerror="this.src='https://images.unsplash.com/photo-1605270631627-0fa0b43f019f?auto=format&fit=crop&q=80&w=1600';" alt="Taller de Alambiques" class="w-full h-full object-cover opacity-60">
           <div class="bg-overlay"></div>
         </div>
 
         <div class="relative z-10 px-6 md:px-12 py-20 md:py-32 max-w-5xl mx-auto text-center">
-          <p class="text-xs tracking-[0.3em] uppercase mb-6 text-[#b87333] fade-up">Ocotlán de Morelos, Oaxaca</p>
-          <h1 class="font-display text-5xl md:text-8xl font-black leading-tight mb-8 text-white fade-up fade-up-d1">
+          <p class="text-xs tracking-[0.3em] uppercase mb-6 text-[#b87333] fade-in-start">Ocotlán de Morelos, Oaxaca</p>
+          <h1 class="font-display text-5xl md:text-8xl font-black leading-tight mb-8 text-white fade-in-start fade-in-start-d1">
             Precisión <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#b87333] to-[#fcece0]">Artesanal</span>
           </h1>
-          <p class="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-gray-400 fade-up fade-up-d2 leading-relaxed">
+          <p class="text-lg md:text-xl max-w-2xl mx-auto mb-12 text-gray-400 fade-in-start fade-in-start-d2 leading-relaxed">
             Fabricación de equipos especializados para la industria del mezcal con el respaldo de cuatro generaciones de experiencia heredada.
           </p>
-          <div class="flex justify-center gap-6 fade-up fade-up-d3">
+          <div class="flex justify-center gap-6 fade-in-start fade-in-start-d3">
             <a href="#contacto" class="px-10 py-4 rounded-full text-sm font-bold transition hover:scale-105 shadow-2xl text-white" style="background: linear-gradient(135deg, #b87333, #8b4513);">
               Cotizar Proyecto
             </a>
@@ -57,243 +63,270 @@
         </div>
       </section>
 
-      <!-- Sección de Identidad con Tarjetas Cuadradas -->
-      <section id="nosotros" class="px-6 md:px-12 py-20 max-w-6xl mx-auto">
-        <div class="text-center mb-16 fade-up">
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Nuestra Identidad</h2>
-          <div class="w-24 h-1 bg-[#b87333] mx-auto"></div>
+      <!-- Sección Historia, Misión y Visión -->
+      <section id="historia" class="relative py-24 md:py-32 border-t border-white/5">
+        <div class="absolute inset-0 z-0">
+          <img src="img/image2.jpg" onerror="this.src='https://images.unsplash.com/photo-1603584852955-46eb1325ce2f?auto=format&fit=crop&q=80&w=1600';" alt="Taller Antiguo" class="w-full h-full object-cover opacity-40 bg-fixed">
+          <div class="bg-gradient-right"></div>
+          <div class="bg-fade-y"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Tarjeta 1: Historia -->
-          <div onclick="openModal('modal-mision')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
-            <i data-lucide="history" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
-            <h3 class="font-display text-2xl text-white font-bold mb-3">Historia y Misión</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Cuatro generaciones preservando la autenticidad del proceso mezcalero.</p>
-            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
-              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="scroll-reveal">
+              <div class="mb-6 flex items-center gap-4">
+                <div class="w-12 h-1 bg-[#b87333]"></div>
+                <span class="text-[#b87333] font-bold tracking-widest uppercase text-sm">Nuestro Legado</span>
+              </div>
+              <h2 class="font-display text-4xl md:text-6xl font-bold text-white mb-8">Nuestra Historia</h2>
+              <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+                <p>
+                  En el corazón de Oaxaca, en Ocotlán de Morelos, nace la esencia de una tradición que ha trascendido generaciones. Alambiques Santaella es el resultado de más de cuatro generaciones dedicadas con pasión a la elaboración de herramientas y equipos para la industria del mezcal.
+                </p>
+                <p>
+                  Nuestra historia comienza con manos expertas que, guiadas por el conocimiento ancestral, dieron forma a los primeros alambiques de manera completamente artesanal. Con el paso del tiempo, este saber se ha perfeccionado, manteniendo siempre el respeto por las técnicas tradicionales.
+                </p>
+                <p>
+                  Hoy, Alambiques Santaella es más que una empresa familiar: es un legado vivo. Cada pieza que elaboramos lleva consigo la experiencia, el compromiso y el orgullo de quienes han dedicado su vida a este oficio.
+                </p>
+              </div>
             </div>
+
+            <div class="space-y-8">
+              <div class="glass-card p-8 md:p-10 rounded-[30px] scroll-reveal" style="transition-delay: 0.1s;">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="p-3 bg-[#b87333]/20 rounded-xl">
+                    <i data-lucide="target" class="text-[#b87333] w-6 h-6"></i>
+                  </div>
+                  <h3 class="font-display text-3xl font-bold text-[#fcece0]">Misión</h3>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                  Crear y ofrecer alambiques y soluciones integrales para la industria del mezcal, elaborados de manera artesanal y con los más altos estándares de calidad, preservando las técnicas tradicionales. Nos comprometemos a acompañar a productores mezcaleros brindando productos duraderos y eficientes.
+                </p>
+              </div>
+
+              <div class="glass-card p-8 md:p-10 rounded-[30px] scroll-reveal" style="transition-delay: 0.2s;">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="p-3 bg-[#b87333]/20 rounded-xl">
+                    <i data-lucide="eye" class="text-[#b87333] w-6 h-6"></i>
+                  </div>
+                  <h3 class="font-display text-3xl font-bold text-[#fcece0]">Visión</h3>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                  Ser una empresa líder a nivel nacional e internacional en la fabricación artesanal de alambiques y equipamiento para la industria del mezcal, reconocida por su calidad, innovación y respeto por la tradición. Aspiramos a seguir creciendo fortaleciendo el legado familiar.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Valores -->
+      <section id="valores" class="relative py-24 md:py-32">
+        <div class="absolute inset-0 z-0">
+          <img src="img/image5.jpg" onerror="this.src='https://images.unsplash.com/photo-1601614392476-eb3a957c7426?auto=format&fit=crop&q=80&w=1600';" alt="Cobre Detalle" class="w-full h-full object-cover opacity-40">
+          <div class="bg-overlay-darker"></div>
+          <div class="bg-fade-y"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <div class="text-center mb-16 scroll-reveal">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Nuestros Valores</h2>
+            <div class="w-24 h-1 bg-[#b87333] mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Los pilares que sostienen nuestro legado y definen cada pieza que fabricamos en Alambiques Santaella.</p>
           </div>
 
-          <!-- Tarjeta 2: Valores -->
-          <div onclick="openModal('modal-valores')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
-            <i data-lucide="gem" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
-            <h3 class="font-display text-2xl text-white font-bold mb-3">Nuestros Valores</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Tradición, calidad y honestidad en cada pieza fabricada por manos oaxaqueñas.</p>
-            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
-              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-8 rounded-3xl scroll-reveal">
+              <i data-lucide="history" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Tradición</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Honramos el conocimiento heredado por cuatro generaciones, preservando técnicas artesanales.</p>
             </div>
-          </div>
-
-          <!-- Tarjeta 3: Calidad -->
-          <div onclick="openModal('modal-calidad')" class="cursor-pointer bg-[#261a12] p-10 rounded-[40px] border border-[#3d2b1f] hover:border-[#b87333] transition-all group shadow-2xl">
-            <i data-lucide="verified" class="w-12 h-12 mb-6 text-[#b87333] group-hover:scale-110 transition-transform"></i>
-            <h3 class="font-display text-2xl text-white font-bold mb-3">Garantía de Calidad</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Equipos funcionales que cumplen con altos estándares de durabilidad.</p>
-            <div class="mt-8 flex items-center text-[#b87333] font-bold text-xs uppercase tracking-widest">
-              Abrir ventana <i data-lucide="maximize-2" class="ml-2 w-4 h-4"></i>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.1s;">
+              <i data-lucide="award" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Calidad</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Precisión y materiales de alto nivel para garantizar productos duraderos a los maestros mezcaleros.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.2s;">
+              <i data-lucide="hammer" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Pasión por el oficio</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Dedicación, paciencia y orgullo en un trabajo artesanal que trasciende el tiempo.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.3s;">
+              <i data-lucide="handshake" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Compromiso</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Acompañamos a los productores ofreciendo soluciones confiables y asesoría con experiencia.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal">
+              <i data-lucide="lightbulb" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Innovación con raíces</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Integramos mejoras que optimizan nuestros productos respetando siempre la tradición.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.1s;">
+              <i data-lucide="landmark" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Identidad cultural</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Protegemos el legado mezcalero. Cada alambique es un símbolo de la cultura de Oaxaca.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.2s;">
+              <i data-lucide="users" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Trabajo familiar</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Empresa construida sobre la unión y el esfuerzo compartido como base de crecimiento.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.3s;">
+              <i data-lucide="shield" class="w-10 h-10 mb-5 text-[#b87333]"></i>
+              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Responsabilidad</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Actuamos con ética y respeto hacia nuestros clientes para generar impacto positivo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Sección de Imagen de Fondo Secundaria (Separador) -->
-      <section class="relative py-40 overflow-hidden">
+      <!-- Sección Equipos y Soluciones -->
+      <section id="equipos" class="relative py-24 md:py-32 border-t border-white/5">
         <div class="absolute inset-0 z-0">
-          <img src="img/image3.jpg" 
-               alt="Cobre y Fuego" 
-               class="w-full h-full object-cover opacity-20 grayscale">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-transparent to-[#1a1a1a]"></div>
+          <img src="img/image4.jpg" onerror="this.src='https://images.unsplash.com/photo-1634546872583-108253198eb5?auto=format&fit=crop&q=80&w=1600';" alt="Equipos" class="w-full h-full object-cover opacity-40">
+          <div class="bg-gradient-right"></div>
+          <div class="bg-fade-y"></div>
         </div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center fade-up">
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <div class="grid lg:grid-cols-5 gap-12 items-start">
+            
+            <div class="lg:col-span-2 scroll-reveal">
+              <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Productos y Soluciones</h2>
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                Ofrecemos una gama completa de productos y soluciones diseñadas para fortalecer cada etapa del proceso mezcalero. En Alambiques Santaella, no solo ofrecemos productos, sino soluciones integrales respaldadas por tradición y conocimiento para responder a las necesidades reales de los productores.
+              </p>
+              <a href="#contacto" class="inline-flex items-center gap-3 text-[#b87333] font-bold uppercase tracking-widest hover:text-white transition-colors">
+                Solicitar Cotización <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </div>
+
+            <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+              <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.1s;">
+                <i data-lucide="droplets" class="text-[#b87333] w-10 h-10 mb-4"></i>
+                <h5 class="text-white font-bold text-xl mb-3">Alambiques Artesanales</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Elaboramos alambiques de cobre y acero inoxidable de alta calidad, fabricados de manera artesanal para garantizar durabilidad y eficiencia.
+                </p>
+              </div>
+              <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.2s;">
+                <i data-lucide="cog" class="text-[#b87333] w-10 h-10 mb-4"></i>
+                <h5 class="text-white font-bold text-xl mb-3">Equipamiento Integral</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Desgarradoras de gasolina y eléctricas, tinas de fermentación, barricas de roble y lavadoras de botellas, además de insumos esenciales.
+                </p>
+              </div>
+              <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.3s;">
+                <i data-lucide="flame" class="text-[#b87333] w-10 h-10 mb-4"></i>
+                <h5 class="text-white font-bold text-xl mb-3">Hornos de Cocimiento</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Diseñamos hornos tipo mampostería para el cocimiento de las piñas, cuidando cada detalle para lograr procesos óptimos y resultados de excelencia.
+                </p>
+              </div>
+              <div class="glass-card p-8 rounded-3xl scroll-reveal" style="transition-delay: 0.4s;">
+                <i data-lucide="messages-square" class="text-[#b87333] w-10 h-10 mb-4"></i>
+                <h5 class="text-white font-bold text-xl mb-3">Asesoramiento Técnico</h5>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Brindamos asesoría en el uso, instalación y aprovechamiento de cada equipo, acompañando a nuestros clientes para obtener el máximo rendimiento.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Separador -->
+      <section class="relative py-32 overflow-hidden border-y border-white/5">
+        <div class="absolute inset-0 z-0">
+          <img src="img/image3.jpg" onerror="this.src='https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1600';" alt="Cobre y Fuego" class="w-full h-full object-cover opacity-40 grayscale">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-transparent to-[#1a1a1a]"></div>
+          <div class="bg-fade-y"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center scroll-reveal">
           <h2 class="font-display text-4xl text-[#fcece0] font-bold mb-4">Calidad que Trasciende Generaciones</h2>
           <p class="text-gray-400 text-lg">Cada equipo es una obra maestra de ingeniería tradicional diseñada para durar.</p>
         </div>
       </section>
 
-      <!-- VENTANAS EMERGENTES (MODALES GIGANTES) -->
-      
-      <!-- Modal 1: Historia -->
-      <div id="modal-mision" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
-        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-5xl w-full relative animate-pop overflow-y-auto max-h-[90vh]">
-          <button onclick="closeModal('modal-mision')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
-            <i data-lucide="x" class="w-8 h-8"></i>
-          </button>
-
-          <!-- Imagen Rectangular Horizontal Principal -->
-          <img src="img/image2.jpg" alt="Taller Antiguo" class="w-full h-auto rounded-lg shadow-2xl mb-12">
-          
-          <div class="grid md:grid-cols-2 gap-12">
-            <div class="space-y-6 modal-section p-8">
-              <h3 class="font-display text-5xl text-[#b87333] font-bold">Nuestra Historia</h3>
-              <p class="text-gray-300 leading-relaxed text-lg">
-                Ubicados en Ocotlán de Morelos, Oaxaca, somos una empresa familiar con cuatro generaciones dedicadas a la fabricación de equipos para mezcal. Nuestra identidad nace de la experiencia heredada y el compromiso por preservar la autenticidad de los procesos tradicionales.
-              </p>
-              <div class="pt-4">
-                <span class="inline-block px-4 py-2 rounded-full border border-[#b87333] text-[#b87333] text-xs font-bold uppercase tracking-widest">
-                  Desde hace 4 generaciones
-                </span>
-              </div>
-            </div>
-            <div class="space-y-10">
-              <div class="modal-section p-8">
-                <h4 class="font-display text-3xl text-[#fcece0] mb-4 font-bold">Misión</h4>
-                <p class="text-gray-400 leading-relaxed">
-                  Diseñar y fabricar equipos garantizando calidad y autenticidad, contribuyendo a procesos eficientes sin perder la esencia del mezcal.
-                </p>
-              </div>
-              <div class="modal-section p-8">
-                <h4 class="font-display text-3xl text-[#fcece0] mb-4 font-bold">Visión</h4>
-                <p class="text-gray-400 leading-relaxed">
-                  Ser líderes internacionales reconocidos por nuestra innovación y soluciones integrales que preservan los procesos tradicionales.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal 2: Valores -->
-      <div id="modal-valores" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
-        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-4xl w-full relative animate-pop">
-          <button onclick="closeModal('modal-valores')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
-            <i data-lucide="x" class="w-8 h-8"></i>
-          </button>
-          <h3 class="font-display text-5xl text-[#b87333] mb-12 font-bold text-center">Valores</h3>
-          <!-- Imagen Rectangular Horizontal Secundaria -->
-          <img src="img/image5.jpg" alt="Detalle de Cobre" class="w-full h-48 object-cover rounded-lg mb-10 opacity-60">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
-              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Tradición</h4>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                Conocimiento transmitido de padres a hijos para proteger la cultura mezcalera.
-              </p>
-            </div>
-            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
-              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Calidad</h4>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                Excelencia técnica en cada soldadura y cada remache de cobre.
-              </p>
-            </div>
-            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
-              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Honestidad</h4>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                Transparencia comercial y materiales de la más alta pureza certificada.
-              </p>
-            </div>
-            <div class="modal-section group p-8 hover:border-[#b87333]/30 transition-all">
-              <h4 class="text-[#fcece0] font-bold text-xl mb-3">Innovación</h4>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                Mejora continua para optimizar el rendimiento sin sacrificar el sabor.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal 3: Calidad -->
-      <div id="modal-calidad" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-transparent">
-        <div class="glass-card p-8 md:p-16 rounded-[50px] max-w-4xl w-full relative animate-pop">
-          <button onclick="closeModal('modal-calidad')" class="absolute top-8 right-8 text-gray-500 hover:text-white transition">
-            <i data-lucide="x" class="w-8 h-8"></i>
-          </button>
-          <h3 class="font-display text-5xl text-[#b87333] mb-8 font-bold">Política de Calidad</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="modal-section p-8">
-              <p class="text-2xl text-gray-300 leading-relaxed font-light italic mb-6">
-                "Aseguramos la satisfacción del cliente y la preservación de la autenticidad del proceso mezcalero mediante equipos duraderos."
-              </p>
-              <!-- Imagen Rectangular Horizontal en Apartado -->
-              <img src="img/image4.jpg" alt="Calidad Certificada" class="w-full h-40 object-cover rounded-lg grayscale">
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-white/10">
-              <div class="flex gap-5">
-                <i data-lucide="shield-check" class="text-[#b87333] w-10 h-10 shrink-0"></i>
-                <div>
-                  <h5 class="text-white font-bold mb-1">Grado Alimenticio</h5>
-                  <p class="text-gray-400 text-sm">
-                    Cobre y acero inoxidable bajo normas internacionales de higiene.
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <i data-lucide="settings" class="text-[#b87333] w-10 h-10 shrink-0"></i>
-                <div>
-                  <h5 class="text-white font-bold mb-1">Equipos Adaptados</h5>
-                  <p class="text-gray-400 text-sm">
-                    Desarrollo de soluciones técnicas según las necesidades de cada palenque.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer id="contacto" class="py-12 px-4 border-t border-white/10 bg-[#1a1a1a]">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Footer y Contacto -->
+      <footer id="contacto" class="py-16 px-6 md:px-12 bg-[#140f0c]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             
-            <!-- 📞 Columna 1: Contacto y Redes Sociales -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-display text-white mb-2">Hablemos de su Proyecto</h3>
-                <p class="text-stone-400 text-sm mb-4">Desde piezas individuales hasta palenques completos. Estamos listos para llevar la tradición de Ocotlán a su destilería.</p>
+            <div class="space-y-6 scroll-reveal">
+                <div>
+                  <h3 class="text-2xl font-display text-white mb-2">Hablemos de su Proyecto</h3>
+                  <div class="w-12 h-1 bg-[#b87333] mb-4"></div>
+                  <p class="text-stone-400 text-sm leading-relaxed">Desde piezas individuales hasta palenques completos. Estamos listos para llevar la tradición de Ocotlán a su destilería.</p>
+                </div>
                 
-                <div class="space-y-2">
-                    <a href="tel:+529512432108" class="flex items-center gap-2 text-white hover:text-[#b87333] transition">
-                        <i data-lucide="phone" class="w-4 h-4"></i> +52 951 243 2108
+                <div class="space-y-3">
+                    <a href="tel:+529512432108" class="flex items-center gap-3 text-gray-300 hover:text-[#b87333] transition">
+                        <div class="p-2 bg-white/5 rounded-full"><i data-lucide="phone" class="w-4 h-4 text-[#b87333]"></i></div>
+                        +52 951 243 2108
                     </a>
-                    <a href="https://wa.me/529512432108" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white hover:text-green-500 transition">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                    <a href="https://wa.me/529512432108" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-300 hover:text-green-500 transition">
+                        <div class="p-2 bg-white/5 rounded-full"><i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i></div>
+                        WhatsApp Directo
                     </a>
                 </div>
 
-                <!-- 🔗 Redes Sociales Funcionales -->
-                <div class="flex gap-3 pt-2">
+                <div class="flex gap-3 pt-4">
                     <a href="https://facebook.com/p/Alambiques-y-Mezcal-Santaella-100039505914791/?locale=es_LA" target="_blank" rel="noopener noreferrer" 
-                      class="p-2 rounded-full border border-white/20 text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                      class="p-3 rounded-full bg-white/5 text-white hover:bg-[#1877F2] transition-all">
                         <i data-lucide="facebook" class="w-5 h-5"></i>
                     </a>
                     <a href="https://instagram.com/TU_USUARIO_OFICIAL" target="_blank" rel="noopener noreferrer" 
-                      class="p-2 rounded-full border border-white/20 text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent transition-all">
+                      class="p-3 rounded-full bg-white/5 text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] transition-all">
                         <i data-lucide="instagram" class="w-5 h-5"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- 🗺️ Columna 2: Google Maps -->
-            <div class="space-y-4">
-                <h3 class="text-lg font-semibold text-white flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-[#b87333]"></i> Ubicación
+            <div class="space-y-6 scroll-reveal" style="transition-delay: 0.1s;">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-[#b87333]"></i> Ubicación
                 </h3>
-                <div class="rounded-xl overflow-hidden border border-white/10 h-48 md:h-64">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8841.49936843237!2d-96.67992768130198!3d16.773171212941552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c740baa4583d9b%3A0x2cc458af0039f3ed!2sNovauniversitas!5e0!3m2!1ses-419!2smx!4v1776219099509!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="rounded-2xl overflow-hidden border border-white/10 h-56 md:h-64 shadow-lg">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30556.825687811925!2d-96.69547964177126!3d16.796405360585343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c740a58c00d81f%3A0xa446b0ccdad371e7!2sLibres%20119%2C%20La%20Estacion%2C%2071510%20Ocotl%C3%A1n%20de%20Morelos%2C%20Oax.!5e0!3m2!1ses-419!2smx!4v1776785305134!5m2!1ses-419!2smx"
+                    class="w-full h-full object-cover" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
                 </div>
-                <p class="text-stone-400 text-xs">Ocotlán de Morelos, Oaxaca, México</p>
+                <p class="text-stone-400 text-sm">Ocotlán de Morelos, Oaxaca, México</p>
             </div>
 
-            <!-- 📝 Columna 3: Formulario (Mantiene ID para tu script.js) -->
-            <div class="space-y-4">
-                <h3 class="text-lg font-semibold text-white">Envíenos un mensaje</h3>
-                <form id="contact-form" class="space-y-3">
-                    <input type="text" name="name" placeholder="Su nombre" class="contact-input w-full p-3 rounded-lg text-white text-sm" required>
-                    <input type="email" name="email" placeholder="Correo electrónico" class="contact-input w-full p-3 rounded-lg text-white text-sm" required>
-                    <textarea name="message" placeholder="Cuéntenos sobre su proyecto..." rows="3" class="contact-input w-full p-3 rounded-lg text-white text-sm" required></textarea>
-                    <button type="submit" class="w-full bg-[#b87333] text-black font-bold py-3 rounded-lg hover:opacity-90 transition text-sm">
+            <div class="space-y-6 scroll-reveal" style="transition-delay: 0.2s;">
+                <h3 class="text-xl font-semibold text-white">Envíenos un mensaje</h3>
+                <form id="contact-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Su nombre" class="contact-input w-full p-4 rounded-xl text-white text-sm" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" class="contact-input w-full p-4 rounded-xl text-white text-sm" required>
+                    <textarea name="message" placeholder="Cuéntenos sobre su proyecto..." rows="4" class="contact-input w-full p-4 rounded-xl text-white text-sm resize-none" required></textarea>
+                    <button type="submit" class="w-full text-white font-bold py-4 rounded-xl hover:opacity-90 transition text-sm shadow-lg" style="background: linear-gradient(135deg, #b87333, #8b4513);">
                         Enviar Solicitud
                     </button>
                 </form>
             </div>
-            </div>
+            
         </div>
 
         <!-- Copyright -->
-        <div class="mt-12 pt-6 border-t border-white/10 text-center text-stone-500 text-xs">
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-stone-500 text-xs">
             <p>© 2026 Alambiques Santaella. Orgullosamente Oaxaqueños.</p>
+            <p>Desarrollado por Jaime Asarías Sánchez Pérez</p>
         </div>
-    </footer>
+      </footer>
 
-      <script src="script.js"></script>
     </div>
+
+    <!-- Referencia al archivo JS externo -->
+    <script src="script.js"></script>
   </body>
 </html>

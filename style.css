@@ -32,43 +32,32 @@ html {
   z-index: 99;
 }
 
-/* Animaciones de Entrada */
-.fade-up {
+/* Animaciones de Entrada Inicial (Hero) */
+.fade-in-start {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUpStart 0.8s ease forwards;
 }
+.fade-in-start-d1 { animation-delay: 0.2s; }
+.fade-in-start-d2 { animation-delay: 0.4s; }
+.fade-in-start-d3 { animation-delay: 0.6s; }
 
-.fade-up-d1 { animation-delay: 0.2s; }
-.fade-up-d2 { animation-delay: 0.4s; }
-.fade-up-d3 { animation-delay: 0.6s; }
-
-@keyframes fadeUp {
+@keyframes fadeUpStart {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animación de los Modales (Efecto de Ventana) */
-@keyframes modalPop {
-  0% { opacity: 0; transform: scale(0.95) translateY(20px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
+/* Animaciones en Scroll */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.animate-pop {
-  animation: modalPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Bloqueo de scroll cuando el modal está abierto */
-.overflow-hidden {
-  overflow: hidden;
-}
-
-/* Estilización de las tarjetas de Identidad */
-.group:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(184, 115, 51, 0.15);
-}
-
-/* Capa de superposición para imágenes de fondo */
+/* Capas de superposición para imágenes de fondo */
 .bg-overlay {
   position: absolute;
   inset: 0;
@@ -79,50 +68,44 @@ html {
     rgba(26, 26, 26, 1) 100%
   );
 }
-
-/* Scrollbar Personalizada para un look Premium */
-::-webkit-scrollbar {
-  width: 6px;
+.bg-overlay-darker {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.85);
+}
+.bg-gradient-right {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(26,26,26,1) 0%, rgba(26,26,26,0.8) 50%, rgba(26,26,26,0.3) 100%);
 }
 
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #3d2b1f;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #b87333;
 }
 
-/* Ajustes de tipografía para mejorar legibilidad en modales */
-#modal-mision p, #modal-valores p, #modal-calidad p {
-  color: #a8a29e; /* stone-400 */
-}
-
-#modal-mision strong {
-  color: #b87333;
-  font-weight: 600;
-}
-
-/* Glassmorphism para modales */
+/* Tarjetas Glassmorphism */
 .glass-card {
-  background: rgba(26, 26, 26, 0.7) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(184, 115, 51, 0.2) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-}
-
-/* Apartados internos de los modales */
-.modal-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
+  background: rgba(38, 26, 18, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 115, 51, 0.2);
   transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(184, 115, 51, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para el formulario de contacto */
@@ -131,8 +114,20 @@ html {
   border: 1px solid rgba(184, 115, 51, 0.2);
   transition: all 0.3s ease;
 }
-
 .contact-input:focus {
   border-color: #b87333;
   background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.bg-fade-y {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #1a1a1a 0%,
+    transparent 15%,
+    transparent 85%,
+    #1a1a1a 100%
+  );
 }

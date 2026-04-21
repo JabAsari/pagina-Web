@@ -1,19 +1,16 @@
-/**
- * Alambiques Santaella - Lógica de Interacción
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inicializar iconos de Lucide
+    // 1. Inicializar iconos
     if (window.lucide) {
         window.lucide.createIcons();
     }
 
-    // 2. Navegación Suave (Ajustada para Sticky Nav)
-    const links = document.querySelectorAll('nav a[href^="#"]');
+    // 2. Navegación Suave 
+    const links = document.querySelectorAll('nav a[href^="#"], a[href^="#contacto"]');
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
+            if(targetId === '#') return;
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
@@ -28,78 +25,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Cerrar Modales al hacer clic en el fondo oscuro (Backdrop)
-    const modals = document.querySelectorAll('[id^="modal-"]');
-    modals.forEach(modal => {
-        modal.addEventListener('click', (e) => {
-            // Cerramos solo si se hace clic en el área oscura, no en el contenido
-            if (e.target === modal) {
-                closeModal(modal.id);
+    // 3. Animación al hacer Scroll (Intersection Observer)
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Dejar de observar una vez que aparece
             }
         });
+    }, { 
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     });
 
-    // 4. Soporte para cerrar con la tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const activeModal = document.querySelector('[id^="modal-"]:not(.hidden)');
-            if (activeModal) {
-                closeModal(activeModal.id);
-            }
-        }
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
     });
-});
 
-/**
- * Función para abrir el modal
- * @param {string} id - El ID del elemento modal
- */
-window.openModal = function(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        // Bloqueamos el scroll del body para mejorar la experiencia
-        document.body.classList.add('overflow-hidden');
-    }
-};
-
-/**
- * Función para cerrar el modal
- * @param {string} id - El ID del elemento modal
- */
-window.closeModal = function(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        // Devolvemos el scroll al body
-        document.body.classList.remove('overflow-hidden');
-    }
-};
-
-/**
- * Gestión básica del formulario de contacto
- */
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Aquí iría la lógica de envío (API/Firestore)
-        const submitBtn = contactForm.querySelector('button');
-        const originalText = submitBtn.innerText;
-        
-        submitBtn.innerText = "Enviando...";
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            submitBtn.innerText = "¡Mensaje Enviado!";
-            contactForm.reset();
+    // 4. Manejo del formulario
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button');
+            const originalText = submitBtn.innerText;
             
+            submitBtn.innerText = "Enviando...";
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            // Simulación de envío
             setTimeout(() => {
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-        }, 1500);
-    });
-}
+                submitBtn.innerText = "¡Mensaje Enviado!";
+                submitBtn.style.background = "#22c55e"; // Color de éxito
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.background = "linear-gradient(135deg, #b87333, #8b4513)";
+                }, 3000);
+            }, 1500);
+        });
+    }
+});
