@@ -112,3 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[indiceActual].classList.add('active');
         }, 4000); // 4000 milisegundos = 4 segundos. Puedes cambiar este número.
     }
+
+// --- 6. Lógica del Menú Móvil ---
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                // Si está abierto, lo ocultamos y ponemos el ícono de menú
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+            } else {
+                // Si está cerrado, lo mostramos y ponemos la X
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                mobileBtn.innerHTML = '<i data-lucide="x"></i>';
+            }
+            // Recargar los íconos de Lucide para que se vea el cambio
+            if (window.lucide) { window.lucide.createIcons(); }
+        });
+
+        // Cerrar el menú automáticamente al hacer clic en cualquier enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+                if (window.lucide) { window.lucide.createIcons(); }
+
+                // Aprovechamos para hacer el scroll suave
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if(targetId === '#') return;
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    }
